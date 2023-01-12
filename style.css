@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+}
+
+.topic {
+  text-align: center;
+  color: aqua;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ccc;
+}
+.topic__progress {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ccc;
+}
+.container {
+  margin-top: 1rem;
+}
+
+.draggable {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: move;
+  width: 300px;
+  height: 150px;
+  margin-top: 12px;
+}
+
+.draggable.dragging {
+  opacity: 0.2;
+}
+
+.container__header > h1 {
+  display: inline;
+}
+
+.container__header {
+  display: flex;
+  justify-content: space-around;
+}
+
+#incomplete-count,
+#Completed-count,
+#inProcess-count {
+  position: relative;
+  bottom: -31px;
+  font-weight: 900;
+}
+
+.dragged__message {
+  display: block;
+  float: right;
+  font-weight: 500;
+  color: red;
+  position: relative;
+  top: 22px;
+  left: -21px;
+}
