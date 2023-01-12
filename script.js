@@ -30,8 +30,6 @@ containers.forEach((container) => {
     if (afterElement == null) {
       //while adding last or down
 
-      // draggable.lastElementChild.textContent = "success!!!";
-
       async function message() {
         let p = new Promise((resolve) => {
           setTimeout(() => {
@@ -64,7 +62,7 @@ function getDragAfterElement(container, y) {
   const draggableElements = [
     ...container.querySelectorAll(".draggable:not(.dragging)"),
   ];
-
+  //pro
   // console.log(draggableElements);
   return draggableElements.reduce(
     (closest, child) => {
