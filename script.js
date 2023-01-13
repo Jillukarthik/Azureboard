@@ -16,7 +16,7 @@ draggables.forEach((draggable) => {
   draggable.addEventListener("dragend", () => {
     draggable.classList.remove("dragging");
     countCard();
-    message();
+    // message();
   });
 });
 
@@ -34,9 +34,11 @@ containers.forEach((container) => {
         let p = new Promise((resolve) => {
           setTimeout(() => {
             resolve((draggable.lastElementChild.style.display = "none"));
-          }, 2000);
+          }, 1500);
         });
+        draggable.lastElementChild.style.display = "block"; 
         draggable.lastElementChild.textContent = "success!!!";
+
         container.appendChild(draggable);
         let result = await p;
       }
@@ -46,10 +48,12 @@ containers.forEach((container) => {
         let p = new Promise((resolve) => {
           setTimeout(() => {
             resolve((draggable.lastElementChild.style.display = "none"));
-          }, 2000);
+          }, 1500);
         });
-        draggable.lastElementChild.textContent = "success!!!";
+        draggable.lastElementChild.style.display = "block";
         container.insertBefore(draggable, afterElement);
+        draggable.lastElementChild.textContent = "success!!!";
+
         let result = await p;
       }
       message();
@@ -84,7 +88,7 @@ function getDragAfterElement(container, y) {
 function countCard() {
   const incomplete = document.querySelector(".incomplete");
   const inprogress = document.querySelector(".inprogress");
-  const completed = document.querySelector(".incomplete");
+  const completed = document.querySelector(".completed");
   incompleteCount.textContent = `${incomplete.children.length - 1}`;
   inProcessCount.textContent = `${inprogress.children.length - 1}`;
   CompletedCount.textContent = `${completed.children.length - 1}`;
